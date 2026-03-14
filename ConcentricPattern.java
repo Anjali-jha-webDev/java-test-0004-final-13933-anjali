@@ -1,15 +1,15 @@
 public class ConcentricPattern {
     public static void main(String[] args) {
+
         int n = 4;
-        int size = 2 * n - 1;
 
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
+        for (int i = 1; i <= 2 * n - 1; i++) {
+            for (int j = 1; j <= 2 * n - 1; j++) {
 
-                int top = i;
-                int bottom = size - 1 - i;
-                int left = j;
-                int right = size - 1 - j;
+                int top = i - 1;
+                int left = j - 1;
+                int right = (2 * n - 1) - j;
+                int bottom = (2 * n - 1) - i;
 
                 int min = Math.min(Math.min(top, bottom), Math.min(left, right));
                 int value = n - min;
